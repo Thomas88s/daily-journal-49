@@ -13,6 +13,7 @@ export const Entries = () => {
         </article>
         `
     }
-
+    
     return allEntriesAsHTML
 }
+
