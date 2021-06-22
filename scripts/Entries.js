@@ -1,7 +1,7 @@
-import { getJournalEntries } from "./database.js"
+import { getEntries } from "./ApplicationState.js"
 
 export const Entries = () => {
-    const entries = getJournalEntries()
+    const entries =  getEntries()
     let allEntriesAsHTML = ""
 
 
