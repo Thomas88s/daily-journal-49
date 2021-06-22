@@ -1,4 +1,26 @@
+    import { saveJournalEntry } from "./ApplicationState.js"
 
+    const mainContainer = document.querySelector("#container")
+
+    mainContainer.addEventListener("click", clickEvent => {
+        if (clickEvent.target.id === "recordEntry") {
+            const entryDate = document.querySelector("input[name='entryDate']").value
+            const entryConcept = document.querySelector("input[name='conceptsCovered']").value
+            const entryForJournal = document.querySelector("textarea[name='journalEntry']").value
+            const entryMood = document.querySelector("select[name='Mood']").value
+
+
+
+
+            const dataToSendToAPI = {
+                date:  entryDate,
+                concept:  entryConcept,
+                entry:  entryForJournal,
+                mood: entryMood
+            }    
+            
+            saveJournalEntry(dataToSendToAPI)
+         }})
     export const JournalForms = () => {
         return `
         <h2>Daily Journal</h2>
@@ -12,12 +34,12 @@
                 <input type="text" name="conceptsCovered" class="text">
             </fieldset>
             <fieldset class="input">
-                <label rows="3" for="journalEntry">Journal Entry</label>
-                <textarea class="box3" rows="3" cols=""></textarea>
+                <label for="journalEntry">Journal Entry</label>
+                <textarea class="box3" name="journalEntry" rows="3" cols=""></textarea>
             </fieldset>
             <fieldset class="input">
                     <label for="Mood">Mood for the Day</label>
-                    <select class="box4"id="cars" name="cars">
+                    <select class="box4"id="cars" name="Mood">
                         <option value="">-choose one-</option>
                         <option value="Happy">Happy</option>
                         <option value="Creative">Creative</option>
@@ -27,7 +49,7 @@
                         <option value="Calm">Calm</option>
                       </select>
             </fieldset>
-            <button class="recordButton" type="button">Record Journal Entry</button>    
+            <button class="recordButton" id="recordEntry" type="button">Record Journal Entry</button>    
         </form>
         `
     }
