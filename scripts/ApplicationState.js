@@ -1,6 +1,7 @@
 
     let applicationState = {
-        entries: []
+        entries: [],
+        moods: []
     }
 
     const mainContainer = document.querySelector("#container")
@@ -14,9 +15,21 @@
                 applicationState.entries = entries
             })
     }
+
+    export const fetchMoods = () => {
+        return fetch(`${API}/moods`) // Fetch from the API
+            .then(response => response.json())  // Parse as JSON
+            .then(moods => {
+                applicationState.moods = moods
+            })
+    }
     
+
  export const getEntries = () => {
      return [...applicationState.entries]
+ }
+ export const getMoods = () => {
+     return [...applicationState.moods]
  }
 
 
