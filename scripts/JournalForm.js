@@ -1,7 +1,8 @@
-    import { saveJournalEntry } from "./ApplicationState.js"
+    import { saveJournalEntry, getMoods} from "./ApplicationState.js"
 
     const mainContainer = document.querySelector("#container")
 
+   
     mainContainer.addEventListener("click", clickEvent => {
         if (clickEvent.target.id === "recordEntry") {
             const entryDate = document.querySelector("input[name='entryDate']").value
@@ -10,17 +11,37 @@
             const entryMood = document.querySelector("select[name='Mood']").value
 
 
-
-
+            
             const dataToSendToAPI = {
                 date:  entryDate,
                 concept:  entryConcept,
                 entry:  entryForJournal,
                 mood: entryMood
             }    
-            
             saveJournalEntry(dataToSendToAPI)
-         }})
+        }})
+        
+        
+        const moodList = () => {
+            
+            const allMoods = getMoods()
+            let html = "<select>"
+    
+            const listItems =
+            `<select class="dropdown" name="receiver" id="receiverSelect">
+             <option value="0">Please select an mood...</option>
+             ${ allMoods.map(mood => `<option value="${mood.id}">${mood.label}</option>`).join("")}
+             </select>`
+
+            html += listItems
+        return html
+        }
+        
+        
+
+
+
+
     export const JournalForms = () => {
         return `
         <h2>Daily Journal</h2>
@@ -39,15 +60,10 @@
             </fieldset>
             <fieldset class="input">
                     <label for="Mood">Mood for the Day</label>
-                    <select class="box4"id="cars" name="Mood">
-                        <option value="">-choose one-</option>
-                        <option value="Happy">Happy</option>
-                        <option value="Creative">Creative</option>
-                        <option value="Peaceful">Peaceful</option>
-                        <option value="Powerful">Powerful</option>
-                        <option value="Reflective">Reflective</option>
-                        <option value="Calm">Calm</option>
-                      </select>
+                    <select>
+                    ${moodList()} 
+                    
+                    </select>
             </fieldset>
             <button class="recordButton" id="recordEntry" type="button">Record Journal Entry</button>    
         </form>

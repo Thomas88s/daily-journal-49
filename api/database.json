@@ -5,28 +5,63 @@
       "date": "07/24/2025",
       "concept": "HTML & CSS",
       "entry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      "mood": "Ok"
+      "moodId": 1
     },
     {
       "id": 2,
       "date": "08/24/2025",
       "concept": "Fish",
       "entry": "We learned about Martin and his awesome aquarium!",
-      "mood": "Totally Stoked"
+      "moodId": 3
     },
     {
       "id": 3,
       "date": "09/24/2025",
       "concept": "Toys",
       "entry": "Something about some weird dude and his toys or something. I don't know, I wasn't really listening.",
-      "mood": "Ehh..."
+      "moodId": 2
     },
     {
       "id": 4,
       "date": "10/24/2025",
       "concept": "Dogs",
       "entry": "More of the same stuff. Something about walking dogs. Whatever.",
-      "mood": "Bored"
+      "moodId": 4
     }
+  ],
+
+  "moods": [
+      {
+          "id": 1,
+          "label": "Happy"
+      },
+      {
+          "id": 2,
+          "label": "Creative"
+      },
+      {
+          "id": 3,
+          "label": "Peaceful"
+      },
+      {
+          "id": 4,
+          "label": "Powerful"
+      },
+      {
+          "id": 5,
+          "label": "Reflective"
+      },
+      {
+          "id": 6,
+          "label": "Calm"
+      },
+      {
+          "id": 7,
+          "label": "Totally Stoked"
+      },
+      {
+          "id": 8,
+          "label": "Lit"
+      }
   ]
 }
