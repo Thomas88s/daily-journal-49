@@ -1,4 +1,5 @@
     import { saveJournalEntry, getMoods} from "./ApplicationState.js"
+    import { findEntriesByMood } from "./Moods.js"
 
     const mainContainer = document.querySelector("#container")
 
