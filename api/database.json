@@ -29,39 +29,38 @@
       "moodId": 4
     }
   ],
-
   "moods": [
-      {
-          "id": 1,
-          "label": "Happy"
-      },
-      {
-          "id": 2,
-          "label": "Creative"
-      },
-      {
-          "id": 3,
-          "label": "Peaceful"
-      },
-      {
-          "id": 4,
-          "label": "Powerful"
-      },
-      {
-          "id": 5,
-          "label": "Reflective"
-      },
-      {
-          "id": 6,
-          "label": "Calm"
-      },
-      {
-          "id": 7,
-          "label": "Totally Stoked"
-      },
-      {
-          "id": 8,
-          "label": "Lit"
-      }
+    {
+      "id": 1,
+      "label": "Happy"
+    },
+    {
+      "id": 2,
+      "label": "Creative"
+    },
+    {
+      "id": 3,
+      "label": "Peaceful"
+    },
+    {
+      "id": 4,
+      "label": "Powerful"
+    },
+    {
+      "id": 5,
+      "label": "Reflective"
+    },
+    {
+      "id": 6,
+      "label": "Calm"
+    },
+    {
+      "id": 7,
+      "label": "Totally Stoked"
+    },
+    {
+      "id": 8,
+      "label": "Lit"
+    }
   ]
 }

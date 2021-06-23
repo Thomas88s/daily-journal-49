@@ -15,7 +15,7 @@
   .text {
       max-width: 400px;
   }
-  .box4 {
+  .box4 .dropdown {
       max-width: 140px;
   }
 
@@ -25,9 +25,16 @@
   .entryHeader {
       font-size: 1.5em;
       margin: .5em, 0, .5em, 0;
+      
   }
 
   .entryList {
       font-size: 1.25em;
     margin: .5em;
+  
+  }
+  
+  #moodSelect{
+      min-width:  600px;
+      margin-left: -3em;
   }

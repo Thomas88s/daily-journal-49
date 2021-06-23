@@ -51,3 +51,12 @@
             }
         )
  }
+
+ export const deleteRequest = (id) => {
+    return fetch(`${API}/entries/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
