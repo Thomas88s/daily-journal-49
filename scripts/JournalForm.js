@@ -8,7 +8,7 @@
             const entryDate = document.querySelector("input[name='entryDate']").value
             const entryConcept = document.querySelector("input[name='conceptsCovered']").value
             const entryForJournal = document.querySelector("textarea[name='journalEntry']").value
-            const entryMood = document.querySelector("select[name='Mood']").value
+            const entryMood = document.querySelector("select[name='MoodSelect']").value
 
 
             
@@ -16,24 +16,28 @@
                 date:  entryDate,
                 concept:  entryConcept,
                 entry:  entryForJournal,
-                mood: entryMood
+                moodId: entryMood
             }    
             saveJournalEntry(dataToSendToAPI)
         }})
         
         
         const moodList = () => {
-            
             const allMoods = getMoods()
-            let html = "<select>"
+            let html = "<ul>"
     
             const listItems =
-            `<select class="dropdown" name="receiver" id="receiverSelect">
-             <option value="0">Please select an mood...</option>
-             ${ allMoods.map(mood => `<option value="${mood.id}">${mood.label}</option>`).join("")}
+            `<select  class="dropDown" name="MoodSelect"  id="moodSelect">
+             <option value="" class="dropdown" name="MoodSelect">Please select an mood...</option>
+             ${ allMoods.map(mood => { return `<option name="MoodSelect" value="${mood.id}">${mood.label}</option>` } ).join("")
+        }
              </select>`
 
-            html += listItems
+
+
+         html += listItems
+         html += "</ul>"
+           
         return html
         }
         
@@ -59,11 +63,10 @@
                 <textarea class="box3" name="journalEntry" rows="3" cols=""></textarea>
             </fieldset>
             <fieldset class="input">
+                <section class="moodSelect">
                     <label for="Mood">Mood for the Day</label>
-                    <select>
                     ${moodList()} 
-                    
-                    </select>
+                   </section> 
             </fieldset>
             <button class="recordButton" id="recordEntry" type="button">Record Journal Entry</button>    
         </form>
