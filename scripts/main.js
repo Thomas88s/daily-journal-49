@@ -5,11 +5,11 @@ const mainContainer = document.querySelector("#container")
 
 const container = document.querySelector("#entries")
 
-const render = () => {
+ export const render = (moodId) => {
     fetchEntries()
     .then(fetchMoods)
     .then( () => {
-        container.innerHTML = DailyJournal()
+        container.innerHTML = DailyJournal(moodId)
     })
 }
 

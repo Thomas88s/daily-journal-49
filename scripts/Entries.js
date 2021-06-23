@@ -23,8 +23,9 @@ export const Entries = () => {
         <article class="Entries">
             <div class="entryHeader">${entry.concept}</div> 
             <div class="entryList">${entry.entry} </div> 
+            <div class="entryDate">${entry.date}</div>
             <button class="button" id="entries--${entry.id}">Delete</button>
-        
+
         </article>
         `
     }
